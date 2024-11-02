@@ -37,11 +37,11 @@
 
         reg = <0x28>;
         interrupt-parent = <&portb>;
-        interrupts = <3 0x2002>;
-        irqflags = <0x00000002>;
+        interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
+        irqflags = <IRQ_TYPE_EDGE_FALLING>;
 
-        reset-gpio = <&porte 2 0x00>;
-        irq-gpio = <&portb 3 0x2002>;
+        reset-gpio = <&porte 2 GPIO_ACTIVE_LOW>;
+        irq-gpio = <&portb 3 GPIO_ACTIVE_LOW>;
 
         /* Caps */
         max_x = <1080>;
