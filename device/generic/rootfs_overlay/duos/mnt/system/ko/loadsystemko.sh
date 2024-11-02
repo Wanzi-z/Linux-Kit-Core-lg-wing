@@ -3,6 +3,7 @@ ${CVI_SHOPTS}
 #
 # Start to insert kernel modules
 #
+insmod /mnt/system/ko/cvi_fb.ko
 insmod /mnt/system/ko/cv181x_sys.ko
 insmod /mnt/system/ko/cv181x_base.ko
 insmod /mnt/system/ko/cv181x_rtos_cmdqu.ko

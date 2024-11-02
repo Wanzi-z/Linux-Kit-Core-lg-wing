@@ -12,6 +12,8 @@ menuconfig INPUT_TOUCHSCREEN
 
 if INPUT_TOUCHSCREEN
 
+source "drivers/input/touchscreen/lge/Kconfig"
+
 config TOUCHSCREEN_PROPERTIES
 	def_tristate INPUT
 	depends on INPUT
@@ -1334,5 +1336,12 @@ config TOUCHSCREEN_ZINITIX
 
 	  To compile this driver as a module, choose M here: the
 	  module will be called zinitix.
+
+config LGE_TOUCH_CORE_SUB
+	bool "LGE TOUCH CORE SUB"
+	help
+	  If sub touch IC with another i2c line is existed, say Y
+
+source "drivers/input/touchscreen/lge_sub/Kconfig"
 
 endif

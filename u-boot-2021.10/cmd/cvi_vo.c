@@ -264,6 +264,8 @@ static int do_startvl(struct cmd_tbl *cmdtp, int flag, int argc, char * const ar
 	char *endp;
 	int size_offset, align;
 
+	mdelay(100);
+
 	if (argc < 6)
 		return CMD_RET_USAGE;
 

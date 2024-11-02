@@ -5,7 +5,7 @@
 #include "cv181x_default_memmap.dtsi"
 
 / {
-	model = "Milk-V DuoS";
+	model = "FoxioTech Linux-Kit Core";
 };
 
 &mipi_rx {

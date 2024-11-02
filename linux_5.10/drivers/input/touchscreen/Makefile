@@ -112,3 +112,6 @@ obj-$(CONFIG_TOUCHSCREEN_ROHM_BU21023)	+= rohm_bu21023.o
 obj-$(CONFIG_TOUCHSCREEN_RASPBERRYPI_FW)	+= raspberrypi-ts.o
 obj-$(CONFIG_TOUCHSCREEN_IQS5XX)	+= iqs5xx.o
 obj-$(CONFIG_TOUCHSCREEN_ZINITIX)	+= zinitix.o
+
+obj-$(CONFIG_LGE_TOUCH_CORE)            += lge/
+obj-$(CONFIG_LGE_TOUCH_CORE_SUB)	+= lge_sub/
