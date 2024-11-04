@@ -36,12 +36,12 @@
         compatible = "lge_sub,sw42000_sub";
 
         reg = <0x28>;
-        interrupt-parent = <&portb>;
-        interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
+        interrupt-parent = <&porte>;
+        interrupts = <2 IRQ_TYPE_EDGE_FALLING>;
         irqflags = <IRQ_TYPE_EDGE_FALLING>;
 
-        reset-gpio = <&porte 2 GPIO_ACTIVE_LOW>;
-        irq-gpio = <&portb 3 GPIO_ACTIVE_LOW>;
+        reset-gpio = <&portb 3 GPIO_ACTIVE_LOW>;
+        irq-gpio = <&porte 2 GPIO_ACTIVE_LOW>;
 
         /* Caps */
         max_x = <1080>;
