@@ -5,11 +5,7 @@
 #include "cv181x_default_memmap.dtsi"
 
 / {
-	model = "FoxioTech Linux-Kit Core";
-};
-
-&mipi_rx {
-	snsr-reset = <&porta 2 GPIO_ACTIVE_LOW>, <&porta 2 GPIO_ACTIVE_LOW>, <&porta 2 GPIO_ACTIVE_LOW>;
+	model = "Linux-Kit Core";
 };
 
 &i2c0 {
@@ -26,22 +22,18 @@
 
 &i2c3 {
 	status = "okay";
-};
-
-&i2c4 {
-	status = "okay";
 	
 	sw42000_sub: sw42000_sub@28 {
         status = "ok";
         compatible = "lge_sub,sw42000_sub";
 
         reg = <0x28>;
-        interrupt-parent = <&porte>;
-        interrupts = <2 IRQ_TYPE_EDGE_FALLING>;
+        interrupt-parent = <&porta>;
+        interrupts = <3 IRQ_TYPE_EDGE_FALLING>;
         irqflags = <IRQ_TYPE_EDGE_FALLING>;
 
-        reset-gpio = <&portb 3 GPIO_ACTIVE_LOW>;
-        irq-gpio = <&porte 2 GPIO_ACTIVE_LOW>;
+        reset-gpio = <&porta 2 GPIO_ACTIVE_LOW>;
+        irq-gpio = <&porta 3 GPIO_ACTIVE_LOW>;
 
         /* Caps */
         max_x = <1080>;
@@ -81,14 +73,10 @@
         h_drag_test_end_x = <276>;
         h_drag_test_y = <2284>;
     };
+};
 
-	gt9xx: gt9xx@14 {
-		compatible = "goodix,gt9xx";
-		reg = <0x14>;
-		goodix,irq-gpio = <&porta 18 0>;
-		goodix,rst-gpio = <&porta 19 GPIO_ACTIVE_HIGH>;
-		status = "okay";
-	};
+&i2c4 {
+	status = "okay";
 };
 
 &spi3 {
@@ -107,18 +95,18 @@
 /* mipi dsi for u-boot */
 &vo {
 	compatible = "cvitek,vo";
-	reset-gpio = <&porte 1 GPIO_ACTIVE_LOW>;
-	pwm-gpio = <&porta 28 GPIO_ACTIVE_HIGH>;
-	power-ct-gpio = <&porte 0 GPIO_ACTIVE_HIGH>;
+	reset-gpio = <&porta 0 GPIO_ACTIVE_LOW>;
+	/delete-property/ pwm-gpio;
+	/delete-property/ power-ct-gpio;
 	status = "okay";
 };
 
 /* mipi dsi for kernel */
 &mipi_tx {
 	compatible = "cvitek,mipi_tx";
-	reset-gpio = <&porte 1 GPIO_ACTIVE_LOW>;
-	pwm-gpio = <&porta 28 GPIO_ACTIVE_HIGH>;
-	power-ct-gpio = <&porte 0 GPIO_ACTIVE_HIGH>;
+	reset-gpio = <&porta 0 GPIO_ACTIVE_LOW>;
+	/delete-property/ pwm-gpio;
+	/delete-property/ power-ct-gpio;
 	status = "okay";
 };
 
