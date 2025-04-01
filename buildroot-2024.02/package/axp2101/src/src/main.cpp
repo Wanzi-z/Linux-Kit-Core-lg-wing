@@ -11,7 +11,7 @@
 #include <string>
 #include "XPowersLib.h"
 
-#define I2C_BUS                 (4)
+#define I2C_BUS                 (2)
 #define AXP2101_SLAVE_ADDRESS   (0x34)
 #define APP_VERSION             "1.1.0"
 
