@@ -18,6 +18,19 @@
 
 &i2c2 {
 	status = "okay";
+    
+  lsm6dsr: lsm6dsr@6a {
+        compatible = "st,lsm6dsr";
+        reg = <0x6a>;
+        interrupt-parent = <&porte>;
+        interrupts = <8 IRQ_TYPE_EDGE_RISING>;
+  };
+
+  atecc608a: atecc608a@60 {
+        compatible = "sferalabs,atecc";
+        reg = <0x60>;
+        status = "okay";
+  };
 };
 
 &i2c3 {
@@ -123,8 +136,8 @@
 &wifi_pin {
 	status = "okay";
 	compatible = "cvitek,wifi-pin";
-	poweron-gpio = <&porta 15 GPIO_ACTIVE_HIGH>;
-	wakeup-gpio = <&porte 7 GPIO_ACTIVE_HIGH>;
+	poweron-gpio = <&portb 22 GPIO_ACTIVE_HIGH>;
+	wakeup-gpio = <&porte 0 GPIO_ACTIVE_HIGH>;
 };
 
 &usb {
