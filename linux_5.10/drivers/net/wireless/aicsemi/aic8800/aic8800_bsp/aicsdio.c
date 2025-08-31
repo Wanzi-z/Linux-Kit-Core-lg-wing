@@ -511,6 +511,8 @@ static int aicbsp_platform_power_on(void)
 	}
 
 	if (cvi_wifi_power_gpio >= 0) {
+		ret = gpio_direction_output(cvi_wifi_power_gpio, 0);
+		mdelay(50);
 		ret = gpio_direction_output(cvi_wifi_power_gpio, 1);
 		if (ret) {
 			printk("%s: WLAN_POWER output high failed!\n", __func__);
